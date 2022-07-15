@@ -3,7 +3,7 @@
   "version": "0.8.1",
   "main": "main.js",
   "description": "electron-updater example project",
-  "author": "Matt Haggard",
+  "author": "MakAndJo",
   "scripts": {
     "publish": "electron-builder -p always"
   },
@@ -17,7 +17,7 @@
     "electron-updater": "^4.3.9"
   },
   "build": {
-    "appId": "com.github.iffy.electronupdaterexample",
+    "appId": "com.github.makandjo.electronupdaterexample",
     "afterSign": "./build/notarize.js",
     "mac": {
       "category": "your.app.category.type"
