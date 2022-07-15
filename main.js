@@ -73,6 +73,9 @@ function createDefaultWindow() {
   win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
   return win;
 }
+autoUpdater.allowPrerelease = true;
+autoUpdater.autoInstallOnAppQuit = true;
+autoUpdater.autoDownload = true;
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 })
