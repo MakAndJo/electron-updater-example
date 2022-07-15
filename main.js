@@ -96,7 +96,9 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
-  autoUpdater.quitAndInstall();
+  const isSilent = true;
+  const isForceRunAfter = true; 
+  autoUpdater.quitAndInstall(isSilent, isForceRunAfter); 
 });
 app.on('ready', function() {
   // Create the Menu
