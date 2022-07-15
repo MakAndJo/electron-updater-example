@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "electron-log": "^4.4.1",
-    "electron-updater": "^5.0.1"
+    "electron-updater": "^5.0.5"
   },
   "build": {
     "appId": "com.github.makandjo.electronupdaterexample",
@@ -24,6 +24,9 @@
     "copyright": "Copyright © 2020-2022 MakAndJo",
     "asar": true,
     "compression": "maximum",
+    "publish": {
+      "provider": "github"
+    },
     "mac": {
       "target": [
         {
