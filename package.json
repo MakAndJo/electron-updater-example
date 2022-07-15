@@ -1,7 +1,7 @@
 {
   "name": "electron-updater-example",
   "version": "0.9.12",
-  "main": "main.js",
+  "main": "./src/main.js",
   "description": "electron-updater example project",
   "author": "MakAndJo",
   "scripts": {
@@ -31,7 +31,7 @@
       "releaseType": "draft"
     },
     "files": [
-      "./*.js",
+      "src/",
       "node_modules/",
       "package.json"
     ],
