@@ -62,9 +62,10 @@
       container.appendChild(message);
     })
     document.getElementById("check-button").addEventListener("click", () => ipcRenderer.invoke("check.update"));
-    document.addEventListener("DOMContentLoaded", () => 
-      setInterval(() => ipcRenderer.invoke("check.update"), 3e4)
-    );
+    document.addEventListener("DOMContentLoaded", () => {
+      setInterval(() => ipcRenderer.invoke("check.update"), 3e4); // Check every 30 seconds
+      ipcRenderer.invoke("check.update"); // Initial check
+    });
   </script>
 </body>
 
