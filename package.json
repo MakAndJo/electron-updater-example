@@ -38,7 +38,6 @@
       "category": "your.app.category.type"
     },
     "win": {
-      "publisherName": "MakAndJo",
       "target": "nsis"
     },
     "linux": {
