@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "MakAndJo",
