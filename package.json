@@ -26,8 +26,8 @@
     "compression": "maximum",
     "publish": {
       "provider": "github",
-      "owner": "tjmcraft",
-      "repo": "TJMC-Launcher",
+      "owner": "MakAndJo",
+      "repo": "electron-updater-example",
       "releaseType": "draft"
     },
     "mac": {
