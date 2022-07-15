@@ -4,6 +4,12 @@
 <head>
   <title>Electron Updater Example</title>
   <style>
+    body {
+      background-color: #232323;
+      color: #dfdfdf;
+      font-weight: 600;
+      font-family: system-ui;
+    }
     #messages {
       display: flex;
       flex-direction: column;
@@ -28,7 +34,7 @@
     ipcRenderer.on('message', function (event, text) {
       var container = document.getElementById('messages');
       var message = document.createElement('span');
-      message.innerHTML = text;
+      message.innerHTML = `\xa0->\xa0${text}\n`;
       container.appendChild(message);
     })
   </script>
