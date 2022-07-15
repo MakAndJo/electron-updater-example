@@ -10,19 +10,42 @@
       font-weight: 600;
       font-family: system-ui;
     }
+    h3 {
+      margin-top: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
     #messages {
+      margin-top: 1em;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: center;
+      justify-content: flex-start;
     }
   </style>
 </head>
 
 <body>
-  <span>Current version: <span id="version">vX.Y.Z</span></span>
-  <div id="messages">
-    <h3>Messages:</h3>
+  <div class="container">
+    <div class="header">
+      <h3>Current version: <span id="version">vX.Y.Z</span></h3>
+      <button id="check-button">Check For Updates</button>
+    </div>
+    <div id="messages">
+      <h3>Messages:</h3>
+    </div>
   </div>
   <script>
     // Display the current version
@@ -37,6 +60,8 @@
       message.innerHTML = `\xa0->\xa0${text}\n`;
       container.appendChild(message);
     })
+    document.getElementById("check-button").addEventListener("click", () => ipcRenderer.invoke("check.update"));
+    document.addEventListener("DOMContentLoaded", () => ipcRenderer.invoke("check.update"));
   </script>
 </body>
 

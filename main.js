@@ -1,7 +1,7 @@
 // This is free and unencumbered software released into the public domain.
 // See LICENSE for details
 
-const {app, BrowserWindow, Menu} = require('electron');
+const {app, BrowserWindow, Menu, ipcMain} = require('electron');
 const log = require('electron-log');
 const {autoUpdater} = require("electron-updater");
 
@@ -62,7 +62,8 @@ function createDefaultWindow() {
   win = new BrowserWindow({
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false
+      contextIsolation: false,
+      nativeWindowOpen: false,
     }
   });
   win.webContents.openDevTools();
@@ -115,8 +116,10 @@ app.on('window-all-closed', () => {
 // app quits.
 //-------------------------------------------------------------------
 app.on('ready', function()  {
-  autoUpdater.checkForUpdatesAndNotify();
+  //autoUpdater.checkForUpdatesAndNotify();
 });
+
+ipcMain.handle("check.update", () => autoUpdater.checkForUpdatesAndNotify());
 
 //-------------------------------------------------------------------
 // Auto updates - Option 2 - More control
