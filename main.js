@@ -125,7 +125,7 @@ app.on('ready', function()  {
   //autoUpdater.checkForUpdatesAndNotify();
 });
 
-ipcMain.handle("check.update", () => autoUpdater.checkForUpdatesAndNotify());
+ipcMain.handle("check.update", () => autoUpdater.checkForUpdates());
 
 //-------------------------------------------------------------------
 // Auto updates - Option 2 - More control
