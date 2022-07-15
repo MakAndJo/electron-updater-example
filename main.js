@@ -93,6 +93,7 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
+  autoUpdater.quitAndInstall();
 });
 app.on('ready', function() {
   // Create the Menu
@@ -146,5 +147,5 @@ ipcMain.handle("check.update", () => autoUpdater.checkForUpdatesAndNotify());
 // autoUpdater.on('download-progress', (progressObj) => {
 // })
 // autoUpdater.on('update-downloaded', (info) => {
-//   autoUpdater.quitAndInstall();  
+//   autoUpdater.quitAndInstall();
 // })
