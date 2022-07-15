@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "MakAndJo",
@@ -19,18 +19,43 @@
   },
   "build": {
     "appId": "com.github.makandjo.electronupdaterexample",
+    "productName": "Electron Updater Example",
+    "artifactName": "${productName}-${version}-setup.${ext}",
+    "copyright": "Copyright © 2020-2022 MakAndJo",
+    "asar": true,
+    "compression": "maximum",
     "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-setup-${version}-${arch}.${ext}",
       "category": "your.app.category.type"
     },
     "win": {
+      "publisherName": "MakAndJo",
       "target": "nsis"
     },
-    "nsis": {
-      "oneClick": false
-    },
     "linux": {
-      "category": "your.app.category.type",
-      "target": "AppImage"
+      "target": "AppImage",
+      "maintainer": "MakAndJo",
+      "vendor": "MakAndJo",
+      "synopsis": "Electron Updater Example",
+      "category": "your.app.category.type"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": false
     }
   }
 }
