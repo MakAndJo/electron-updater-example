@@ -30,6 +30,11 @@
       "repo": "electron-updater-example",
       "releaseType": "draft"
     },
+    "files": [
+      "dist/electron",
+      "node_modules/",
+      "package.json"
+    ],
     "mac": {
       "target": [
         {
