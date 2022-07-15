@@ -57,7 +57,8 @@
     ipcRenderer.on('message', function (event, text) {
       var container = document.getElementById('messages');
       var message = document.createElement('span');
-      message.innerHTML = `\xa0->\xa0${text}\n`;
+      const time = (new Date()).getTime();
+      message.innerHTML = `[${time}]\xa0->\xa0${text}\n`;
       container.appendChild(message);
     })
     document.getElementById("check-button").addEventListener("click", () => ipcRenderer.invoke("check.update"));
