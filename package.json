@@ -18,7 +18,6 @@
   },
   "build": {
     "appId": "com.github.makandjo.electronupdaterexample",
-    "afterSign": "./build/notarize.js",
     "mac": {
       "category": "your.app.category.type"
     },
